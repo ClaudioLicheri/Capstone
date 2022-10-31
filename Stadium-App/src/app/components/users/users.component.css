@@ -1,0 +1,51 @@
+app-header{
+  z-index: 999 !important;
+
+}
+app-header::after {
+  z-index: 10;
+}
+.btnuser{
+  display: flex !important;
+  justify-content: end !important;
+}
+
+.btnuser button {
+  margin-right: 1.5rem !important;
+}
+#image{
+  background-position: center !important;
+  height: 15rem !important;;
+  background-image: url("../../../assets/football-stadium-gdff8a6771_1920.jpg");
+
+}
+#user {
+  margin-top: 6rem !important;;
+  padding: 0 6rem !important;
+}
+.card{
+  background-color: rgba(227, 227, 227, 0.778) !important;
+}
+
+#user ul li{
+  background-color: rgba(228, 224, 224, 0.658) !important;
+}
+.insert{
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 2rem !important;;
+
+}
+
+.insert td input{
+  margin-right: 1.5rem;
+
+  text-align: center !important;
+
+}
+.insert td button{
+  margin-left: 1.5rem;
+
+  text-align: center !important;
+
+}

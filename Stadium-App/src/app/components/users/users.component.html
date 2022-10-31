@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div id="image">
+
+</div>
+<div class=" card"   style="margin-top: 2rem; width: 60rem; text-align: center;align-items: center;margin-left: 15rem;">
+<div class="insert card-body " style="width: auto; padding: auto; text-align: center;"><tr>
+  <td>
+    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="username" [(ngModel)]="usertoinsert.username">
+  </td>
+  <td>
+    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="password" [(ngModel)]="usertoinsert.password">
+  </td>
+  <td>
+    <select  style="height:2rem ;width:2rem;border-radius: 3px;" placeholder="usertype" [(ngModel)]="usertoinsert.usertype">
+      <option value="ADMIN">ADMIN</option>
+      <option value="USER">USER</option>
+    </select>
+  </td>
+  <td>
+    <button class="btn btn-info" (click)="insert(usertoinsert)">Insert</button>
+  </td>
+  <td>
+    <button class="btn btn-info" (click)="clear()">Clear</button>
+  </td>
+</tr></div>
+</div>
+<div  id="user">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Username</th>
+        <th scope="col">Usertype</th>
+        <th scope="col">Modifica</th>
+        <th scope="col">Elimina</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+      <tr>
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.username}}</td>
+        <td>{{user.usertype}}</td>
+
+        <td><button class="btn btn-danger" (click)="delete(user)">Elimina</button></td>
+        <td><button class="btn btn-info" (click)="switchEdit(user)">Modifica</button></td>
+        <div *ngIf="user.editing == true"><td>
+          Username:<input [(ngModel)]="user.username">
+        </td>
+        <td >
+          Password:<input style="margin-left:1.3rem ;" [(ngModel)]="user.password">
+        </td>
+      <td><button style="margin-left:1.5rem ;" class="btn btn-info" (click)=update(user)>Save</button></td></div>
+
+      </tr>
+    </tbody>
+  </table>
+
+  </div>

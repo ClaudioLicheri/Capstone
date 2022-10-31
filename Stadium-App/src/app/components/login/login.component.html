@@ -1,0 +1,57 @@
+<form (ngSubmit)="handleSubmit(f)" #f="ngForm" class="vh-10 gradient-custom">
+    <div class="container py-4 h-100">
+        <div class="row d-flex h-100" style="justify-content:right">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-light text-black" style="border-radius: 1rem; margin-top:25%">
+                    <div class="card-body text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+
+                            <img src="../../../assets/stadium_App_logo.png" class="col-sm-7 text-black logo"
+                                style="margin-bottom: 5%;">
+
+                            <div class="form-outline form-black mb-3">
+                                <label class="form-label" for="typeEmailX" style="float:left">Username</label>
+                                <input type="text" id="typeEmailX" class="form-control" name="username"
+                                    style="border-radius: 1rem; border-color: black;" placeholder="Pippo Baudo"
+                                    [(ngModel)]="username" #u="ngModel"
+                                    [appForbidden]="['porcoDio', 'porcaMadonna', 'cazzo', 'culo']" required />
+                            </div>
+                            <div *ngIf="(u.touched || f.submitted) && u.invalid">
+                                <p *ngIf="p.hasError('required')" class="error">Campo Obbligatorio
+                                </p>
+                                <p *ngIf="u.hasError('forbidden')" class="error">Username non ammesso
+                                </p>
+                            </div>
+                            <div class="form-outline form-black mb-3">
+                                <label class="form-label" for="typePasswordX" style="float:left">Password</label>
+                                <input type="password" id="typePasswordX" class="form-control" name="password"
+                                    style="border-radius: 1rem; border-color: black;" placeholder="****************"
+                                    [(ngModel)]="password" #p="ngModel" required/>
+                                   <!-- COPIA DA BLOCCO NOTE CLAUDIO QUESTA RIGA -->
+                            </div>
+                            <div *ngIf="(p.touched || f.submitted ) && p.invalid">
+                                <p *ngIf="p.hasError('required')" class="error">Campo Obbligatorio
+                                </p>
+                                <p *ngIf="p.hasError('pattern')" class="error">Password non valida
+                                </p>
+                            </div>
+                            <p class="small pb-lg-2"><a
+                                style="color:rgba(219, 90, 90, 0.767); float: left;  font-weight: bold;"
+                                href="#!">Password Dimenticata?</a></p>
+                            <button class="btn btn-danger btn-block" type="submit"
+                                style="border-radius: 1rem; margin-top: 10%;"  (click)="handleSubmit(f)">Accedi</button>
+                        </div>
+
+                        <div>
+                            <p style="display:block">Non hai un account? <a href="/register"
+                                    style="color:rgba(219, 90, 90, 0.767); font-weight: bold;">Registrati</a></p>
+                            <p class="small pb-lg-2" style="color:grey; margin-top: 0%;">Powered by Contrader</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

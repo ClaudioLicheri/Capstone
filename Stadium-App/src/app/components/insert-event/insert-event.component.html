@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="container px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="card">
+                <form (ngSubmit)="handleSubmit(f)" #f="ngForm" class="form-card" onsubmit="event.preventDefault()">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nome
+                                evento<span class="text-danger"> *</span></label> <input type="text" id="fname"
+                                name="name" [(ngModel)]="event.eventName" [ngModelOptions]="{standalone: true}" #n="ngModel" required> </div>
+                                <!-- <div *ngIf="(n.touched || f.submitted) && n.invalid" style="float:left;">
+                                    <p *ngIf="n.hasError('required')" class="error">Campo Obbligatorio
+                                    </p>
+                                </div> -->
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">ID
+                                Utente associato<span class="text-danger"> *</span></label>
+                                <select [(ngModel)]="event.user" class="form-control" name="user">
+                                  <option *ngFor="let user of users" [ngValue]="user">{{user.username}}</option>
+                                </select>
+                                <!-- <input type="text" [(ngModel)]="event.user" [ngModelOptions]="{standalone: true}" *ngfor="let user of users" #s="ngModel" id="lname" name="user" required> -->
+                                </div>
+                    </div>
+                    <!-- <div *ngIf="(s.touched || f.submitted) && s.invalid">
+                        <p *ngIf="s.hasError('required')" class="error">Campo Obbligatorio
+                        </p>
+                    </div> -->
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Posti disponibili<span class="text-danger">
+                                    </span></label> <input type="text" [(ngModel)]="event.placesAvailable" [ngModelOptions]="{standalone: true}" #l="ngModel" id="email" name="placesAvailable"
+                                    required
+                                > </div>
+                                <!-- <div *ngIf="(l.touched || f.submitted) && l.invalid">
+                                    <p *ngIf="l.hasError('required')" class="error">Campo Obbligatorio
+                                    </p>
+                                </div> -->
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Capienza massima<span class="text-danger">
+                                    *</span></label> <input type="text" [(ngModel)]="event.maxCapacity" [ngModelOptions]="{standalone: true}" #m="ngModel" id="mob" name="maxCapacity"
+                                    required> </div>
+                                    <!-- <div *ngIf="(m.touched || f.submitted) && m.invalid">
+                                        <p *ngIf="m.hasError('required')" class="error">Campo Obbligatorio
+                                        </p>
+                                    </div> -->
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Stadio<span class="text-danger"> *</span></label> <input
+                                type="text" [(ngModel)]="event.stadiumName" [ngModelOptions]="{standalone: true}" #t="ngModel" id="job" name="stadiumName" required> </div>
+                                <!-- <div *ngIf="(t.touched || f.submitted) && t.invalid">
+                                    <p *ngIf="t.hasError('required')" class="error">Campo Obbligatorio
+                                    </p>
+                                </div> -->
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Data<span class="text-danger"> *</span></label> <input
+                                type="date" [(ngModel)]="event.eventDate" [ngModelOptions]="{standalone: true}" #d="ngModel" id="mob" name="eventDate" required> </div>
+                                <!-- <div *ngIf="(d.touched || f.submitted) && d.invalid">
+                                    <p *ngIf="d.hasError('required')" class="error">Campo Obbligatorio
+                                    </p>
+                                </div> -->
+                    </div>
+                    <input type="hidden" [(ngModel)]="event.id" [ngModelOptions]="{standalone: true}" #z="ngModel" required>
+                    <div class="row justify-content-center">
+                        <div class="form-group col-sm-6"> <button type="submit"
+                                class="btn-block btn-primary" (click)="handleSubmit(f)">Inserisci</button> </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

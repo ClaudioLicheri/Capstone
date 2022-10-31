@@ -1,0 +1,67 @@
+.img-pers{
+  width: 50%;
+  height: 50%;
+  align-items: center;
+}
+.bkd{
+  background-color: #F4F3F8;
+  border-radius: 10px;
+}
+.profile-name{
+font-size: 20px;
+color: #132E7F;
+font-weight: bold;
+}
+.xx{
+  padding-left: 10px;
+}
+
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #BA68C8;
+}
+
+.profile-button {
+  background: #132E7F;
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #682773;
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer;
+}
+
+.card{
+  border-radius: 10px;
+  background-color: #f2f2f272;
+  height: 100px;
+  box-shadow: -1px -2px 32px 5px rgba(0,0,0,0.11);
+}
+
+.testi{
+  font-weight: bold;
+  color: #132E7F;
+}
+
+.blub{
+  color: white;
+  background-color: #132E7F;
+}
+
+

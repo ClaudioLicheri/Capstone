@@ -1,0 +1,73 @@
+<app-header></app-header>
+<div class="img">
+</div>
+<div style="text-align: center;"><h1> Benvenuto   {{user.username}}</h1></div>
+  <div id="container">
+
+
+  <div class="dropdown">
+ <!-- <div id="container"> -->
+  <!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Città
+  </button>
+  <ul class="dropdown-menu">
+    <li><button class="dropdown-item" type="button">Roma</button></li>
+    <li><button class="dropdown-item" type="button">Milano</button></li>
+    <li><button class="dropdown-item" type="button">Napoli</button></li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Categoria
+  </button>
+  <ul class="dropdown-menu">
+    <li><button class="dropdown-item" type="button">Serie A</button></li>
+    <li><button class="dropdown-item" type="button">Serie B</button></li>
+    <li><button class="dropdown-item" type="button">Serie C</button></li>
+  </ul>
+</div>
+<div><input class="btn btn-secondary dropdown-toggle" type="date" placeholder="Dal giorno"> </div>
+
+  <div>
+    <input class="btn btn-secondary dropdown-toggle" type="date" placeholder="Al giorno"></div> -->
+ <!-- </div> -->
+
+
+<div id="teams">
+  <button type="button" style="margin-bottom:2%; margin-top: 2%;" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" [routerLink]="['/insert-event']">Crea Evento</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Creatore dell'evento</th>
+        <th scope="col">Evento</th>
+        <th scope="col">Stadio</th>
+        <th scope="col">Data</th>
+        <th scope="col">Capienza Massima</th>
+        <th scope="col">Posti Disponibili</th>
+        <th *ngIf="role==2"scope="col">Acquista</th>
+        <th *ngIf="role!=2" scope="col">Modifica</th>
+        <th *ngIf="role!=2" scope="col">Elimina</th>
+        <th *ngIf="role==2" scope="col">Preferiti</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let event of event">
+      <tr>
+        <th scope="row">{{event.id}}</th>
+        <td>{{event.user.username}}</td>
+        <td>{{event.eventName}}</td>
+        <td>{{event.stadiumName}}</td>
+        <td>{{event.eventDate}}</td>
+        <td>{{event.maxCapacity}}</td>
+        <td>{{event.placesAvailable}}</td>
+        <!-- <td>{{event.ticket}}</td> -->
+        <td *ngIf="role==2"><button  class="btn btn-danger" routerLink="/ticket"  routerLinkActive="ticket" (click)="buyTicket(event.ticket)">Acquista</button></td>
+        <td *ngIf="role!=2"><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
+        <td *ngIf="role!=2"><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
+        <td *ngIf="role==2"><button class="btn btn-primary"(click)="delete(event)">Aggiungi</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,125 @@
+<app-header></app-header>
+<!-- <div class="container mt-5">
+  <div class="row">
+    <div class="col-6">
+      <p class="profile-name">Profilo</p>
+    </div>
+    <div class="col-6 text-right">
+      <button type="button" class="btn btn-danger">Modifica</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-3 bkd">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center align-item-center mt-3">
+            <img src="https://yt3.ggpht.com/ytc/AMLnZu9tvAOMEu0JJzee23Z6gomHSqbVMJNMDjCBzXQ02A=s900-c-k-c0x00ffffff-no-rj" class="rounded-circle img-pers" alt="Sample image">
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-12">
+         <p class="profile-name text-center my-4">Gesu di Nazareth</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3 bkd">
+      <div class="row d-flex justify-content-center align-item-center text-center">
+        <div class="col-12">
+            <p>Data di nascita</p>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-12">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
+            <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
+            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+          </svg>
+          <p>Culo</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3">
+
+    </div>
+    <div class="col-12 col-lg-3">
+
+    </div>
+  </div>
+</div> -->
+<div class="container rounded bg-white mt-5">
+  <div class="row">
+      <div class="col-md-4 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://yt3.ggpht.com/ytc/AMLnZu9tvAOMEu0JJzee23Z6gomHSqbVMJNMDjCBzXQ02A=s900-c-k-c0x00ffffff-no-rj" width="90"><span class="font-weight-bold">{{user.name}} {{user.surname}}</span><span class="text-black-50">{{user.email}}</span><span>{{user.address}}</span></div>
+      </div>
+      <div class="col-md-8">
+          <div class="p-3 py-5">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
+                      <h6>Torna alla home</h6>
+                  </div>
+                  <h6 class="text-right">Modifica Profilo</h6>
+              </div>
+              <div class="row mt-2">
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Nome" value={{user.name}}></div>
+                  <div class="col-md-6"><input type="text" class="form-control" value={{user.surname}} placeholder="Cognome"></div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value={{user.email}}></div>
+                  <div class="col-md-6"><input type="text" class="form-control" value={{user.phone_number}} placeholder="Telefono"></div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="inidirizzo" value={{user.address}}></div>
+              </div>
+
+              <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="button">Salva Informazioni</button></div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h2>I tuoi ticket</h2>
+  <div class="row">
+    <div class="col-12 card">
+      <div class="row">
+        <div class="col-12 col-md-4 text-center pt-3 testi">
+          <p>Inter - Milan</p>
+          <p>01/09/2022 ore 21:00</p>
+        </div>
+
+        <div class="col-12 col-md-4 text-center pt-3 testi">
+          <p>Stadio San Siro</p>
+          <p>Acquisto il : 10/08/2022</p>
+        </div>
+
+        <div class="col-12 col-md-4 text-right pt-4 pr-5">
+          <a href="#" class="btn blub">Dettagli</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h2 class="text-right mt-5">I tuoi preferiti</h2>
+  <div class="row">
+    <div class="col-12 card">
+      <div class="row">
+        <div class="col-12 col-md-4 text-center pt-3 testi">
+          <p>Inter - Milan</p>
+          <p>01/09/2022 ore 21:00</p>
+        </div>
+
+        <div class="col-12 col-md-4 text-center pt-3 testi">
+
+        </div>
+
+        <div class="col-12 col-md-4 text-right pt-4 pr-5">
+          <a href="#" class="btn btn-danger ">Rimuovi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

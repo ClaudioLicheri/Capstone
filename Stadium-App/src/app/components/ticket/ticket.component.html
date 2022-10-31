@@ -1,0 +1,37 @@
+<app-header></app-header>
+<h1 style="text-align: center;">BIGLIETTI</h1>
+
+<div  id="ticket">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">data acquisto</th>
+        <th scope="col">Nome Evento</th>
+        <th scope="col">Utente</th>
+        <th scope="col">Elimina</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let ticket of ticket">
+      <tr>
+        <th scope="row">{{ticket.id}}</th>
+        <td>{{ticket.purchaseDate}}</td>
+        <td>{{ticket.event.eventName}}</td>
+        <td>{{ticket.user.username}}</td>
+        <td><button class="btn btn-danger" (click)="delete(ticket)">Elimina</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <ul style="font-weight:bold ; margin-top:1.6rem; " *ngFor="let ticket of ticket" class="list-group">
+    <li  class="list-group-item">{{ticket.id}}
+      {{ticket.purchaseDate}}
+      {{ticket.event.eventName}}
+      {{ticket.user.username}}
+      <span class="btnuser">
+        <button  type="button" (click)="delete(ticket)" class="btn btn-danger">Elimina</button>
+        <button type="button" class="btn btn-info">Info</button></span></li>
+  </ul> -->
+</div>
+
+

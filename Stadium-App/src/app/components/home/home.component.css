@@ -1,0 +1,37 @@
+app-header {
+  display:fixed !important;
+  position: sticky !important;
+}
+.btn-secondary {
+  color: black !important;
+  border:  rgba(234, 234, 234, 0.716) !important;;
+  background-color: rgba(234, 234, 234, 0.716) !important;
+
+}
+#container {
+  padding: 0 8rem !important;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between !important;
+}
+
+
+#teams {
+
+  padding:0 3rem !important;
+
+}
+
+
+#listteam{
+  border: none !important;
+  border-radius: 5px !important;
+  background-color: rgba(234, 234, 234, 0.716) !important;
+}
+
+.img{
+  width: 100% !important;
+  height: 15rem;
+  background-position: center !important;
+  background-image: url("../../../assets/soccer-g6c1515f29_1920.jpg");
+}

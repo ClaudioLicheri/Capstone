@@ -1,0 +1,50 @@
+.navbar{
+    background-color: rgb(23, 23, 92) !important;
+}
+.nav-link{
+    color: white !important;
+}
+
+.container-fluid {
+   margin-left: 63%;
+}
+
+.d-flex {
+    margin-right: 10%;
+}
+
+.navbar-toggler {
+    margin: auto;
+    margin-right: 10%;
+    margin-top: -10%;
+    filter: invert(100%);
+}
+
+@media (max-width: 860px) {
+    .navbar-toggler {
+        margin: auto;
+        margin-right: 10%;
+        margin-top: -12%;
+        filter: invert(100%);
+    }
+    
+}
+
+@media (max-width: 668px) {
+    .navbar-toggler {
+        margin: auto;
+        margin-right: 10%;
+        margin-top: -15%;
+        filter: invert(100%);
+    }
+    
+}
+
+@media (max-width: 550px) {
+    .navbar-toggler {
+        margin: auto;
+        margin-right: 10%;
+        margin-top: -18%;
+    }
+    
+}

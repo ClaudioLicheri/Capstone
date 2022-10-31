@@ -1,0 +1,24 @@
+<app-header></app-header>
+<h1 class="text-center my-5">I prefeiriti di {{user.username}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Utente</th>
+            <th scope="col">Evento</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let fav of favourite">
+          <tr>
+            <td>{{fav.id}}</td>
+            <td>{{fav.user.username}}</td>
+            <td>{{fav.event.eventName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
